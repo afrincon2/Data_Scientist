@@ -2,8 +2,10 @@ import unittest
 import io
 import contextlib
 from unittest.mock import patch
-from src.alphabeta import TicTacToe
-from src.alphabeta import alpha_beta_value
+import sys
+sys.path.append('C:/Users/afrincon/OneDrive - Asesoftware S.A.S/Documentos/Data Scientist/Data_Scientist/AlphaBeta/src')
+from alphabeta2 import TicTacToe
+from alphabeta2 import alpha_beta_value
 
 class MainTest(unittest.TestCase):
     def test_empty_board(self):
@@ -23,3 +25,5 @@ class MainTest(unittest.TestCase):
         current_board = 'oo?' + 'x??' + 'x??'
         state = TicTacToe(current_board, False)
         self.assertEqual(-1, alpha_beta_value(state), msg='Wrong alphabeta value for the board: oo?x??x??')
+if __name__ == '__main__':
+    unittest.main()
